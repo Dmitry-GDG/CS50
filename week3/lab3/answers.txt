@@ -1,0 +1,37 @@
+sort1 uses: bubble sort
+
+How do you know?: sorted array quicker
+
+sort2 uses: merge sort
+
+How do you know?: very quick, time doesn't so depend on sorted input array
+
+sort3 uses: selection sort
+
+How do you know?: very slow, time doesn't depend on sorted input array
+
+
+                                sort1            sort2           sort3
+reversed10000.txt       real    0m0.352s        0m0.036s        0m0.223s
+                        user    0m0.191s        0m0.008s        0m0.103s
+                        sys     0m0.008s        0m0.020s        0m0.020s
+
+random10000.txt         real    0m0.432s        0m0.098s        0m0.161s
+                        user    0m0.220s        0m0.010s        0m0.101s
+                        sys     0m0.020s        0m0.015s        0m0.012s
+
+sorted10000.txt         real    0m0.023s        0m0.020s        0m0.195s
+                        user    0m0.011s        0m0.004s        0m0.107s
+                        sys     0m0.012s        0m0.016s        0m0.012s
+
+-------------------------------------------------------------------------
+
+selection sort      O(n2)       min(n2)
+
+bubble sort         O(n2)       min(n)
+
+merge sort          O(n log n)  min(n log n)
+
+------------
+call it (for each method and for each file):
+time ./sort1 reversed10000.txt
