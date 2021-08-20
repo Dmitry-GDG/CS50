@@ -481,3 +481,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     }
     return;
 }
+
+/* call it:
+* make filter
+* ./filter -b images/yard.bmp out.bmp
+* ./filter -r images/yard.bmp out.bmp
+* ./filter -e images/yard.bmp out.bmp
+* ./filter -g images/yard.bmp out.bmp */
