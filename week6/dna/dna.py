@@ -49,6 +49,9 @@ def main():
                 j += 1
     print("No match")
 
+# call it
+# python dna.py databases/small.csv sequences/1.txt
+# python dna.py databases/large.csv sequences/6.txt
 
 if __name__ == "__main__":
     main()
