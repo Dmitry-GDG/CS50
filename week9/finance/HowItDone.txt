@@ -1,0 +1,40 @@
+
+------
+1.  В Терминале перейти в папку finance и запустить
+	sqlite3 finance.db 
+
+2. В этой базе создать две таблицы (в Терминале):
+
+2.1.
+ 	CREATE TABLE stocks (
+    user_id  INTEGER NOT NULL,
+    symbol   TEXT    NOT NULL,
+    quantity INTEGER NOT NULL,
+    total    INTEGER NOT NULL,
+    pps      INTEGER
+);
+
+2.2.	
+	CREATE TABLE history (
+    id       INTEGER  PRIMARY KEY AUTOINCREMENT
+                      NOT NULL,
+    user_id  INTEGER  NOT NULL,
+    [action] BOOLEAN  NOT NULL,
+    symbol   TEXT     NOT NULL,
+    quantity INTEGER  NOT NULL,
+    pps      INTEGER  NOT NULL,
+    date     DATETIME NOT NULL
+                      DEFAULT CURRENT_TIMESTAMP
+);
+
+3. Выйти 
+	Ctrl+C
+
+---------------
+4. Зарегистрироваться и получить токен
+	https://iexcloud.io/console/
+
+Перез запуском flask  вводить этот токен:
+	export API_KEY=Твой_Токен
+	flask run
+---
