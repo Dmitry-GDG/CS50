@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Success
+{% endblock %}
+
+{% block main %}
+    <blockquote class="text-left">
+        Congratulations!<br>
+        You successfully {{ action }} <mark>{{ quantity }} {{ name }}</mark>
+        {% if quantity == "1" %} share
+        {% else %} shares
+        {% endif %}
+        for <mark>{{ total }}</mark> <br>
+        Cash available: <mark>{{ funds }}</mark>
+    </blockquote>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div>
+        {% if not stocks %}
+            <h6>You have no shares. Go <a href="/buy">to buy</a> some!</h6>
+        {% endif %}
+        <blockquote class="text-left">
+            Initial cash:   <mark>$10,000.00</mark><br>
+            Available cash:  <mark>{{ cash }}</mark><br>
+            Portfolio value: <mark>{{ grand_total }}</mark><br>
+            Profit: <mark>{{ profit }}</mark><br><br>
+            Transaction history:
+        </blockquote>
+        {% if stocks %}
+        <table class="table table-hover table-striped table-bordered table-sm">
+          <thead class="thead-dark">
+            <tr>
+                <th rowspan="2">Company</th>
+                <th rowspan="2">Symbol</th>
+                <th rowspan="2">Quantity</th>
+                <th colspan="2">Price per share</th>
+                <th colspan="2">Total shares value</th>
+                <th rowspan="2">Profit</th>
+            </tr>
+            <tr>
+                <th>initial</th>
+                <th>current</th>
+                <th>initial</th>
+                <th>current</th>
+            </tr>
+          </thead>
+
+            {% for stock in stocks %}
+            <tr>
+                <td>{{ stock.company }}</td>
+                <td>{{ stock.symbol }}</td>
+                <td>{{ stock.quantity }}</td>
+                <td>{{ stock.pps }}</td>
+                <td>{{ stock.cur_price }}</td>
+                <td>{{ stock.total }}</td>
+                <td>{{ stock.cur_total }}</td>
+                <td>{{ stock.profit }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+{% endblock %}

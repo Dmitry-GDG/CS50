@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div>
+        <table class="table table-hover table-striped table-bordered table-sm">
+          <thead class="thead-dark">
+            <tr>
+                <th>Action</th>
+                <th>Symbol</th>
+                <th>Quantity</th>
+                <th>Price per share</th>
+                <th>Total</th>
+                <th>Date</th>
+            </tr>
+          </thead>
+            {% for stock in stocks %}
+            <tr>
+                <td>
+                    {% if stock.action %}
+                        BUY
+                    {% else %}
+                        SELL
+                    {% endif %}
+                </td>
+                <td>{{ stock.symbol }}</td>
+                <td>{{ stock.quantity }}</td>
+                <td>{{ stock.pps }}</td>
+                <td>{{ stock.total }}</td>
+                <td>{{ stock.date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
